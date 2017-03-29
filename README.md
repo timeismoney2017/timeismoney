@@ -1,6 +1,6 @@
 # Time is Money
 
-"Time is Money" is a one-button productivity app to track time spent doing various tasks. The results are saved via H2(Spring-Hibernate) database to be viewed later. The intention of the app is to fascilitate time tracking events ranging from client interactions to time spent at the grocery store. The hope is that people will be able to easily collect data on themselves so that they can have a better idea of how they are spending their time.
+"Time is Money" is a one-button productivity app to track time spent doing various tasks. The front-end is handled by Cordova which sends and retrieves data to our backend component which is a RESTful API built via JPA and Hibernate(Spring JPA and H2 dependencies). The intention of the app is to fascilitate time tracking events ranging from client interactions to time spent at the grocery store. The hope is that people will be able to easily collect data on themselves so that they can have a better idea of how they are spending their time.
 
 ## Getting Started
 
