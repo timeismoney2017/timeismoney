@@ -1,6 +1,6 @@
 # Time is Money
 
-"Time is Money" is a one-button productivity app to track one's time spent doing various tasks. The results are saved into a database as row entries to be viewed later. The intention of the app is to fascilitate time tracking events ranging from client interactions to time spend at the grocery store. The hope is that people will be able to easily collect data on themselves so that they can have a better idea of how they are spending their time.
+"Time is Money" is a one-button productivity app to track time spent doing various tasks. The results are saved into a database as row entries to be viewed later. The intention of the app is to fascilitate time tracking events ranging from client interactions to time spend at the grocery store. The hope is that people will be able to easily collect data on themselves so that they can have a better idea of how they are spending their time.
 
 ## Getting Started
 
