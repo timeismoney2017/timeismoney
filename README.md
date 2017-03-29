@@ -30,8 +30,9 @@ Install via your OS's app store.
 
 ## Built With
 
-* [Cordova](https://cordova.apache.org/) - App development framework
+* [Cordova](https://cordova.apache.org/) - Mobile App development framework
 * [Spring Data JPA](https://spring.io/) - Framework for data access
+* [H2](http://www.h2database.com/html/main.html) - Database Engine
 * [Gradle](https://gradle.org/) - Project build automation tool
 
 <!-- ## Contributing
