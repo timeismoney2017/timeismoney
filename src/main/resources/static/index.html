@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
  	<!-- css -->
     <link href="css/index.css"  rel="stylesheet" type="text/css"/>
  	<!-- bootstrap -->
@@ -18,13 +18,39 @@
 </head>
 
 <body>
-    <div class="app">
-       
-        <h1>6:35 PM</h1>
-    </div>
 
-       
-    </script>
+
+      <div id="timer"></div>
+      <button type="button" id="start">start</button>
+      <button type="button" id="pause">pause</button>
+      <button type="button" id="resume">resume</button>
+      <button type="button" id="stop">stop</button>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+
+   crossorigin="anonymous"></script>
+  <script src="js/timer.js"></script>
+
+  <script>
+    $('#start').click(function() {
+      $('#timer').timer('start');
+    });
+    $('#pause').click(function() {
+      $('#timer').timer('pause');
+    });
+    $('#resume').click(function() {
+      $('#timer').timer('resume');
+    });
+    $('#stop').click(function() {
+      $('#timer').timer('remove');
+    });
+
+
+
+  </script>
+
 </body>
 
 </html>
