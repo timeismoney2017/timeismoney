@@ -1,21 +1,38 @@
 package com.timeismoney.wecancodeit;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
 public class Greeting {
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long userTime;
+	private long id;
+	@JsonIgnore
+	private String content;
+	
+	protected Greeting() {
+		
+	}
+	public Greeting(long id, String content, long userTime) {
+		this.id = id;
+		this.content = content;
+		this.userTime = userTime;
+	}
 
-    private final long id;
-    private final String content;
+	public long getId() {
+		return id;
+	}
 
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
-    }
+	public String getContent() {
+		return content;
+	}
 
-    public long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
+	public long getUserTime() {
+		return userTime;
+	}
 }
