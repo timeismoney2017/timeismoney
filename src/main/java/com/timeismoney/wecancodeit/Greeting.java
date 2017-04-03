@@ -8,11 +8,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Greeting {
+	private long userTime;
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private long userTime;
 	private long id;
-	@JsonIgnore
 	private String content;
 	
 	protected Greeting() {
