@@ -12,7 +12,7 @@
  	<!-- css -->
     <link href="css/index.css"  rel="stylesheet" type="text/css"/>
  	<!-- bootstrap -->
-    <link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
     <title>Display</title>
 </head>
@@ -24,7 +24,8 @@
       <button type="button" id="start">start</button>
       <button type="button" id="pause">pause</button>
       <button type="button" id="resume">resume</button>
-      <button type="button" id="stop">stop</button>
+      <button type="button" id="stop">stop</button><br>
+      <button type="button" id="getJson">getJson</button>
 
       <form>
       Select a time:
@@ -32,13 +33,15 @@
       </form>
 
 
-
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 
    crossorigin="anonymous"></script>
   <script src="js/timer.js"></script>
 
+
   <script>
+    var timerData;
+
     $('#start').click(function() {
       $('#timer').timer('start');
     });
@@ -50,10 +53,39 @@
     });
     $('#stop').click(function() {
       $('#timer').timer('remove');
-    });
+      // console.log($('#timer').data('seconds'));
+      timerData = $('#timer').data('seconds')
+   
 
+     $.ajax({           // Make an Ajax call to the server. HTTP verb = POST, URL = locations
+          type: 'POST',
+          url: 'http://localhost:8080/greeting',
+          data: JSON.stringify({
+            userTime: timerData
+          }),
 
+          headers: {
+            'Accept': 'application/json',
+             'Content-Type': 'application/json'
+          },
+        'dataType': 'json'
+      }).done(function(data, status) { // If the call succeeds, clear the form and reload the summary table
 
+          alert(data.userTime);
+
+            //this should clear the fields
+            $('#timer').val('');
+
+      });
+
+ });
+ 
+$('#getJson').click(function() { 
+	$.getJSON( "http://localhost:8080/greeting", function( json ) {
+	  console.log( "JSON Data: " + json[2].userTime );
+	 });
+ });
+ 
   </script>
 
 </body>

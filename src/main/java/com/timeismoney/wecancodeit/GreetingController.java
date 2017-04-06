@@ -1,5 +1,6 @@
 package com.timeismoney.wecancodeit;
 
+
 import javax.annotation.Resource;
 
 import org.springframework.http.HttpStatus;
@@ -16,21 +17,16 @@ public class GreetingController {
 	@Resource
 	private GreetingRepository repo;
 
-	
-	
-
 	@GetMapping(value = "/greeting")
-	public ResponseEntity<Greeting> findGreeting() {
-		Greeting greeting = new Greeting();
-		return new ResponseEntity<Greeting>(greeting, HttpStatus.CREATED);
+	public Iterable<Greeting> findGreeting() {
+		return  repo.findAll();
 	}
 
 	
 	@RequestMapping(value = "/greeting", method = RequestMethod.POST)
 	public ResponseEntity<Greeting> update(@RequestBody Greeting greeting) {
 
-	    // TODO: call persistence layer to update
-	    return new ResponseEntity<Greeting>(greeting, HttpStatus.OK);
+		return new ResponseEntity<>(repo.save(greeting), HttpStatus.CREATED);
 	}
 
 }
