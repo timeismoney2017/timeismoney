@@ -18,24 +18,16 @@
 </head>
 
 <body>
-
-
       <div id="timer"></div>
+      <div id="result"></div>
       <button type="button" id="start">start</button>
       <button type="button" id="pause">pause</button>
       <button type="button" id="resume">resume</button>
       <button type="button" id="stop">stop</button><br>
       <button type="button" id="getJson">getJson</button>
 
-      <form>
-      Select a time:
-      <input type="time" name="usr_time">
-      </form>
 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-
-   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="js/timer.js"></script>
 
 
@@ -45,19 +37,21 @@
     $('#start').click(function() {
       $('#timer').timer('start');
     });
+    
     $('#pause').click(function() {
       $('#timer').timer('pause');
     });
+    
     $('#resume').click(function() {
       $('#timer').timer('resume');
     });
+    
     $('#stop').click(function() {
       $('#timer').timer('remove');
-      // console.log($('#timer').data('seconds'));
-      timerData = $('#timer').data('seconds')
+      timerData = $('#timer').data('seconds');
    
 
-     $.ajax({           // Make an Ajax call to the server. HTTP verb = POST, URL = locations
+     $.ajax({           
           type: 'POST',
           url: 'http://localhost:8080/greeting',
           data: JSON.stringify({
@@ -69,22 +63,17 @@
              'Content-Type': 'application/json'
           },
         'dataType': 'json'
-      }).done(function(data, status) { // If the call succeeds, clear the form and reload the summary table
-
-          alert(data.userTime);
-
-            //this should clear the fields
-            $('#timer').val('');
-
-      });
-
- });
- 
-$('#getJson').click(function() { 
-	$.getJSON( "http://localhost:8080/greeting", function( json ) {
-	  console.log( "JSON Data: " + json[2].userTime );
+	      }).done(function(data, status) { 
+	            $('#timer').text('');
+	      });
 	 });
- });
+ 
+	$('#getJson').click(function() { 
+		$.getJSON( "http://localhost:8080/greeting", function( json ) {
+		  $('#result').html('<p/>' + json[1].userTime);
+		  console.log( "JSON Data: " + json[1].userTime );
+		 });
+	 });
  
   </script>
 
