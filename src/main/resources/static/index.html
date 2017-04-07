@@ -71,7 +71,7 @@
 	$('#getJson').click(function() { 
 		$.getJSON( "http://localhost:8080/greeting", function( json ) {
 		  $('#result').html('<p/>' + json[1].userTime);
-		  console.log( "JSON Data: " + json[1].userTime );
+		  console.log( "JSON Data: " + json[0].userTime );
 		 });
 	 });
  
