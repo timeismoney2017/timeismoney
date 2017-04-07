@@ -1,9 +1,11 @@
 package com.timeismoney.wecancodeit; 
 
-import javax.persistence.Entity; 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -14,6 +16,9 @@ public class Greeting {
 	private long id;
 	@JsonIgnore
 	private String content;
+	
+	@ManyToOne
+	private Category category;
 	
 	protected Greeting() {
 		
