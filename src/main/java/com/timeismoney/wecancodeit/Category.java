@@ -18,24 +18,21 @@ public class Category {
 	private Long id;
 	private String title;
 	private String description;
-	private String imageUrl;
 	
 	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)  
 	private Collection<Greeting> greeting;
-
 	
 	private Category() {
 	}
 	
-	public Category(String title, String description, String img) {
-		this(title, description, img, Collections.emptyList());
+	public Category(String title, String description) {
+		this(title, description, Collections.emptyList());
 	}
 	
-	public Category(String title, String description, String img, Collection<Greeting> greeting) {
+	public Category(String title, String description, Collection<Greeting> greeting) {
 		this.title = title;
 		this.greeting = greeting;
 		this.description = description;
-		this.imageUrl = img;
 	}
 
 	public Collection<Greeting> getGreeting() {
@@ -54,7 +51,4 @@ public class Category {
 		return description;
 	}
 	
-	public String getImageUrl() {
-		return imageUrl;
-	}
 }
