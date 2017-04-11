@@ -12,24 +12,18 @@ public class TimeDuration {
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private long id;
-	@JsonIgnore
-	private String content;
+	
 	
 	protected TimeDuration() {
 		
 	}
-	public TimeDuration(long id, String content, long userTime) {
+	public TimeDuration(long id, long userTime) {
 		this.id = id;
-		this.content = content;
 		this.userTime = userTime;
 	}
 
 	public long getId() {
 		return id;
-	}
-
-	public String getContent() {
-		return content;
 	}
 
 	public long getUserTime() {
