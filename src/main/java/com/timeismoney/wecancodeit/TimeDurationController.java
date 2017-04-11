@@ -19,11 +19,14 @@ public class TimeDurationController {
 <<<<<<< HEAD:src/main/java/com/timeismoney/wecancodeit/TimeDurationController.java
 	private TimeDurationRepository repo;
 
+<<<<<<< HEAD
 =======
-	private GreetingRepository repo;
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	
+	@CrossOrigin(origins = "https://sleepy-fjord-84553.herokuapp.com/time")
 >>>>>>> 1534843d19009a6501fb76329f25e3a56322cfc8:src/main/java/com/timeismoney/wecancodeit/GreetingController.java
+=======
+>>>>>>> refactor_names
 	@GetMapping(value = "/time")
 	public Iterable<TimeDuration> findGreeting() {
 		return  repo.findAll();

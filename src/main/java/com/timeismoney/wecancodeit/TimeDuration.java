@@ -14,8 +14,7 @@ public class TimeDuration {
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private long id;
-	@JsonIgnore
-	private String content;
+	
 	
 <<<<<<< HEAD:src/main/java/com/timeismoney/wecancodeit/TimeDuration.java
 	protected TimeDuration() {
