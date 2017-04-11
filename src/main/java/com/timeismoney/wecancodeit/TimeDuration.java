@@ -15,15 +15,7 @@ public class TimeDuration {
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private long id;
 	
-	
-<<<<<<< HEAD:src/main/java/com/timeismoney/wecancodeit/TimeDuration.java
 	protected TimeDuration() {
-=======
-	@ManyToOne
-	private Category category;
-	
-	protected TimeDuration() {
->>>>>>> 1534843d19009a6501fb76329f25e3a56322cfc8:src/main/java/com/timeismoney/wecancodeit/Greeting.java
 		
 	}
 	public TimeDuration(long id, long userTime) {

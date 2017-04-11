@@ -16,17 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TimeDurationController {
 	@Resource
-<<<<<<< HEAD:src/main/java/com/timeismoney/wecancodeit/TimeDurationController.java
 	private TimeDurationRepository repo;
 
-<<<<<<< HEAD
-=======
 	
 	
 	@CrossOrigin(origins = "https://sleepy-fjord-84553.herokuapp.com/time")
->>>>>>> 1534843d19009a6501fb76329f25e3a56322cfc8:src/main/java/com/timeismoney/wecancodeit/GreetingController.java
-=======
->>>>>>> refactor_names
 	@GetMapping(value = "/time")
 	public Iterable<TimeDuration> findGreeting() {
 		return  repo.findAll();
