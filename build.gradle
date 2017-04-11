@@ -22,7 +22,7 @@ repositories {
 }
 
 jar {
-    baseName = 'timeismoney'
+    baseName = 'timeismoney-cordova'
     version =  '0.1.0'
 }
 
