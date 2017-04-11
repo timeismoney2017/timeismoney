@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class GreetingController {
+public class TimeDurationController {
 	@Resource
-	private GreetingRepository repo;
+	private TimeDurationRepository repo;
 
 	@GetMapping(value = "/greeting")
-	public Iterable<Greeting> findGreeting() {
+	public Iterable<TimeDuration> findGreeting() {
 		return  repo.findAll();
 	}
 
 	
 	@RequestMapping(value = "/greeting", method = RequestMethod.POST)
-	public ResponseEntity<Greeting> update(@RequestBody Greeting greeting) {
+	public ResponseEntity<TimeDuration> update(@RequestBody TimeDuration greeting) {
 
 		return new ResponseEntity<>(repo.save(greeting), HttpStatus.CREATED);
 	}

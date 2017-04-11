@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Greeting {
+public class TimeDuration {
 	private long userTime;
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -15,10 +15,10 @@ public class Greeting {
 	@JsonIgnore
 	private String content;
 	
-	protected Greeting() {
+	protected TimeDuration() {
 		
 	}
-	public Greeting(long id, String content, long userTime) {
+	public TimeDuration(long id, String content, long userTime) {
 		this.id = id;
 		this.content = content;
 		this.userTime = userTime;
