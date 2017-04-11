@@ -17,16 +17,16 @@ public class TimeDurationController {
 	@Resource
 	private TimeDurationRepository repo;
 
-	@GetMapping(value = "/greeting")
+	@GetMapping(value = "/time")
 	public Iterable<TimeDuration> findGreeting() {
 		return  repo.findAll();
 	}
 
 	
-	@RequestMapping(value = "/greeting", method = RequestMethod.POST)
-	public ResponseEntity<TimeDuration> update(@RequestBody TimeDuration greeting) {
+	@RequestMapping(value = "/time", method = RequestMethod.POST)
+	public ResponseEntity<TimeDuration> update(@RequestBody TimeDuration time) {
 
-		return new ResponseEntity<>(repo.save(greeting), HttpStatus.CREATED);
+		return new ResponseEntity<>(repo.save(time), HttpStatus.CREATED);
 	}
 
 }
