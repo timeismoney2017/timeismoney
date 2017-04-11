@@ -22,7 +22,7 @@ public class TimeDurationController {
 	
 	@CrossOrigin(origins = "https://sleepy-fjord-84553.herokuapp.com/time")
 	@GetMapping(value = "/time")
-	public Iterable<TimeDuration> findGreeting() {
+	public Iterable<TimeDuration> findTimeDuration() {
 		return  repo.findAll();
 	}
 
